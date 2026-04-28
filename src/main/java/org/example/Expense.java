@@ -9,9 +9,9 @@ public class Expense {
     private LocalDate date;
     private String description;
 
-    public Expense(String description, String category, double amount) {
+    public Expense(String description, String category, double amount, LocalDate date) {
         this.description = description;
-        this.date = LocalDate.now();
+        this.date = date;
         this.category = category;
         this.amount = amount;
     }
@@ -35,10 +35,10 @@ public double getAmount() {
 
     @Override
     public String toString() {
-        return "Description" + description +
-                " Category" + category +
-        " Date" + LocalDate.now() +
-                " Amount" + amount;
+        return "\n"+"Description: " + description + "\n"+
+                " Category: " + category + "\n" +
+        " Date: " + LocalDate.now() + "\n"+
+                " Amount: " + amount + "\n";
     }
 }
 

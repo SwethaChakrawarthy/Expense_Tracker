@@ -7,10 +7,13 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         ExpenseManager expenseManager = new ExpenseManager();
+        expenseManager.loadFromfile();
         while(true) {
-            System.out.print("1. Add Expense 2. View All Expenses 3. View Total 4. Exit");
+            System.out.print("\n"+"#####============Expense Tracker===========#####");
+            System.out.print("\n"+"1. Add Expense "+"\n"+"2. View All Expenses"+"\n"+ "3. View Total "+"\n"+"4. Exit"+"\n");
             System.out.print("Enter your choice: ");
             switch (scanner.nextLine()) {
 
@@ -21,9 +24,11 @@ public class Main {
                     String category = scanner.nextLine();
                     System.out.println("enter the amount you want to save for expense ");
                     double amount = scanner.nextDouble();
-                    Expense exp1 = new Expense(description, category, amount);
+                    Expense exp1 = new Expense(description, category, amount, LocalDate.now());
 
                     expenseManager.addExpense(exp1);
+                    expenseManager.saveTofile();
+
                     break;
                 case "2":
                     System.out.print(expenseManager.getAllExpenses().toString());
@@ -32,7 +37,8 @@ public class Main {
                     System.out.print(expenseManager.totalExpenses());
                     break;
                 case "4":
-                    break;
+                    return;
+
             }
         }
         }
