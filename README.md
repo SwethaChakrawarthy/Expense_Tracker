@@ -1,17 +1,20 @@
-echo "# Expense Tracker
-A CLI-based expense tracker built with Core Java, Maven, and File I/O.
+# Expense Tracker 💰
+
+A CLI-based personal expense tracker built with Core Java.
 
 ## Features
-- Add expenses
+- Add new expenses
 - View all expenses
-- Calculate total
-- Data persists using file storage
+- Calculate total spending
+- Data persists using file storage (CSV)
 
-## Technologies
+## Technologies Used
 - Java
 - Maven
-- Git" > README.md
+- File I/O
+- Git and GitHub
 
-git add README.md
-git commit -m "add README"
-git push origin main
+## How to Run
+1. Clone the repository
+2. Open in IntelliJ IDEA
+3. Run Main.java
