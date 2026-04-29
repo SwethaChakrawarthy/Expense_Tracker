@@ -10,6 +10,9 @@ public class Expense {
     private String description;
 
     public Expense(String description, String category, double amount, LocalDate date) {
+        if(amount<0){
+            throw new IllegalArgumentException("Amount cannot be negative");
+        }
         this.description = description;
         this.date = date;
         this.category = category;
